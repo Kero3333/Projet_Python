@@ -51,7 +51,7 @@ for i in range(1, len(tableD[0])):
             match[tableD[0][i]] += 1
         n += 1
 
-    # si le nombre de match d'une sequence d'adn est différent de 0
+    # si le nombre de match d'une séquence d'adn est différent de 0
     if match[tableD[0][i]] != 0:
 
         # alors pour chaque personne ayant le même nombre de la même séquence d'adn

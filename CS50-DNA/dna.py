@@ -65,12 +65,12 @@ for i in range(1, len(tableD[0])):
                     nameMatch[tableD[j][0]] = 1
 
 # on vérifie si une personne a obtenus une correspondance parfaite avec la séquence d'adn contenu dans le fichier .txt
-matchOrNot = 0
+matchOrNot = False
 for name, nbMatch in nameMatch.items():
     if nbMatch == (len(tableD[0]) - 1):
-        matchOrNot = 1
+        matchOrNot = True
         print(name)
 
 # si il n'y a pas eu de correspondance on affiche "No match"
-if matchOrNot == 0:
+if matchOrNot == False:
     print("No match")

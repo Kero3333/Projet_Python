@@ -22,7 +22,7 @@ else:
 # on ouvre le fichier .csv en lecture
 fdata = open(argv[1], "r")
 
-# on récupère les données du fichier et on les places dans une liste appelé tableD
+# on récupère les données du fichier et on les place dans une liste appelée tableD
 tableD = []
 for x in fdata:
     tableD.append(x.replace("\n", '').split(","))
@@ -35,17 +35,17 @@ fdna = open(argv[2], "r")
 dna = fdna.readline()
 fdna.close()  # on ferme le fichier .txt
 
-# on crée un dictionnaire vide afin de récupérer le nombre de match qu'il y eu entre les séquences d'adn contenus dans tableD et dna
+# on crée un dictionnaire vide afin de récupérer le nombre de match qu'il y a eu entre les séquences d'adn contenu dans tableD et dna
 match = {}
-# on crée un second dictionnaire afin de comptabiliser le nombre de séquence d'adn qui colle avec une personne contenus dans tableD
+# on crée un second dictionnaire afin de comptabiliser le nombre de séquence d'adn qui colle avec une personne contenu dans tableD
 nameMatch = {}
 
-# pour chaque séquence d'adn contenus dans tableD
+# pour chaque séquence d'adn contenu dans tableD
 for i in range(1, len(tableD[0])):
     match[tableD[0][i]] = 0
     n = len(tableD[0][i])
 
-    # pour chaque séquence d'adn contenus dans dna
+    # pour chaque séquence d'adn contenu dans dna
     for j in range(len(dna)):
         if tableD[0][i] == dna[j:n]:
             match[tableD[0][i]] += 1

@@ -38,7 +38,7 @@ def saveAlarm(alarmToSave, linkVideoToSave):
 
 
 def updateFile(theTime):
-    # on crée un fichier dans lequelle on va copier le contenus du fichier de sauvegarde
+    # on crée un fichier dans lequelle on va copier le contenu du fichier de sauvegarde
     with open('saveAlarmC.csv', 'w') as fc:
         with open('saveAlarm.csv', 'r') as f:
             for line in f:
@@ -59,9 +59,9 @@ def initAlarm():
     # on crée deux listes contenant chacun respectivement les dates et les liens de vidéos
     dates = []
     videos = []
-    # on essaie d'ouvrir le fichier, si il y arrive
+    # on essaie d'ouvrir le fichier, s'il y arrive
     try:
-        # alors on relance les thread des différents alarmes
+        # alors on relance les threads des différents alarmes
         with open('saveAlarm.csv', 'r') as f:
             for line in f:
                 date, video = line.split(',')
@@ -70,22 +70,22 @@ def initAlarm():
         for nbAlarm in range(len(dates)):
             anAlarm = threading.Thread(target=alarm, args=(dates[nbAlarm], videos[nbAlarm],))
             anAlarm.start()
-    # si on a pas réussi à l'ouvrir alors on fait rien
+    # si on n'a pas réussi à l'ouvrir alors on ne fait rien
     except FileNotFoundError:
         pass
 
 
-# on appelle la fonction iniAlarm() afin de vérifier si il n'y a pas d'alarme qui a été programée avant l'arrêt du programme
+# on appelle la fonction iniAlarm() afin de vérifier s'il n'y a pas d'alarme qui a été programée avant l'arrêt du programme
 initAlarm()
 
 while True:
 
     # on demande si l'utilisateur souhaite voir l'heure ou programmer une alarme
     choice = input("Time   Alarm : ")
-    # si il choisit de voir l'heure alors on la lui affiche
+    # s'il choisit de voir l'heure alors on la lui affiche
     if choice.lower() == "time":
         print(t.strftime('%H:%M %d/%m/%Y'))
-    # si il choisit de programmer unn alarme
+    # s'il choisit de programmer unn alarme
     elif choice.lower() == "alarm":
         # alors on lui demande pour quelle date ainsi que, quelle video en gage de sonnerie il souhaitera lancer
         talarm = input("Donnez la date et l'heure pour laquelle vous souhaitez programmer le réveil (HH:MM JJ/MM/AAAA)")

@@ -12,7 +12,6 @@ def alarm(time, video):
         # si la date récupérée est la même que celle à cet instant
         if time == t.strftime('%H:%M %d/%m/%Y'):
             ring = True
-            #video1 = "https://www.youtube.com/embed/3MMMe1drnZY?autoplay=1"
             # alors on envoie la commande suivante dans le terminal de l'ordinateur pour lancer la vidéo sur firefox
             system(f"firefox --private-window {video}")
             # on modifie le fichier qui sauvgarde les programmations d'alarmes

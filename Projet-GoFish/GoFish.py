@@ -9,10 +9,6 @@ fenetre.title("Go Fish")
 fenetre.configure(background = 'white')
 fenetre.resizable(0, 0)
 
-# fonction qui sert à définir ce qui se passe lorsque la touche entrer est pressée
-def keyEnterPressed(event):
-    valider()
-
 # fonction qui définit ce que le programme doit faire si le bouton valider est cliqué
 def valider():
     choix=list.get(ANCHOR)  # on récupère l'objet qui a été selectionner dans la listbox
@@ -117,9 +113,6 @@ list.grid(row=1, column=0)
 btnValider = tk.Button(fenetre, height = 1, width = 10, text = "Valider", command = valider)
 btnValider.grid(row = 2, column = 0)
 btnValider.click = 0 #  on initialise le nombre de click du boutton à 0
-
-# on crée la fonction de la touche enter
-fenetre.bind('<Return>', keyEnterPressed)
 
 # on récupère les données contenus dans le fichier Poisson.csv
 caractFish = []

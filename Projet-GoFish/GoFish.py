@@ -1,4 +1,3 @@
-import csv
 import re
 import tkinter as tk
 from tkinter.constants import ANCHOR, END
@@ -23,7 +22,7 @@ def valider():
         saisonChoix = choix  # on récupère le choix de la saison
         # on réactualise la question ainsi que les choix contenus dans la listbox
         list.delete(0, END)
-        label.config(text = "Appuyez sur la touche correspondant au mode de pêche que vous souhaitez :" )
+        label.config(text = "Appuyez sur la touche correspondant au mode de pêche que vous souhaitez" )
         choixTypePeche = ["pêche en mer", "pêche au bord"]
         for i in range(len(choixTypePeche)):
             list.insert(END, choixTypePeche[i])
@@ -35,14 +34,14 @@ def valider():
         # on réactualise la question ainsi que les choix contenus dans la listbox, selon le choix de la saison éffectué et celui du type de pêche choisit
         if saisonChoix == "été":            
             if typePeche == "pêche en mer":
-                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'été :")               
+                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'été")               
                 for i in range(1,len(caractFish)):
                     if re.search("ete" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][7] != "\n":
                             list.insert(END, caractFish[i][0])
             
             if typePeche == "pêche au bord":
-                label.config(text = "Voici les poissons que vous pouvez pêcher au bord l'été :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher au bord l'été")
                 for i in range(1,len(caractFish)):
                     if re.search("ete" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][6] != "\n":
@@ -50,13 +49,13 @@ def valider():
 
         if saisonChoix == "printemps":            
             if typePeche == "pêche en mer":
-                label.config(text = "Voici les poissons que vous pouvez pêcher en mer le printemps :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher en mer le printemps")
                 for i in range(1,len(caractFish)):
                     if re.search("printemps" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][7] != "\n":
                             list.insert(END, caractFish[i][0])
             if typePeche == "pêche au bord":
-                label.config(text = "Voici les poissons que vous pouvez pêcher au bord le printemps :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher au bord le printemps")
                 for i in range(1,len(caractFish)):
                     if re.search("printemps" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][6] != "\n":
@@ -64,13 +63,13 @@ def valider():
 
         if saisonChoix == "hiver":            
             if typePeche == "pêche en mer":
-                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'hiver :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'hiver")
                 for i in range(1,len(caractFish)):
                     if re.search("hiver" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][7] != "\n":
                             list.insert(END, caractFish[i][0])
             if typePeche == "pêche au bord":
-                label.config(text = "Voici les poissons que vous pouvez pêcher au bord l'hiver :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher au bord l'hiver")
                 for i in range(1,len(caractFish)):
                     if re.search("hiver" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][6] != "\n":
@@ -78,13 +77,13 @@ def valider():
 
         if saisonChoix == "automne":           
             if typePeche == "pêche en mer":
-                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'automne :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher en mer l'automne")
                 for i in range(1,len(caractFish)):
                     if re.search("automne" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][7] != "\n":
                             list.insert(END, caractFish[i][0])
             if typePeche == "pêche au bord":
-                label.config(text = "Voici les poissons que vous pouvez pêcher au bord en automne :")
+                label.config(text = "Voici les poissons que vous pouvez pêcher au bord en automne")
                 for i in range(1,len(caractFish)):
                     if re.search("automne" , caractFish[i][2]) or re.search("Toute l'annee" , caractFish[i][2]):
                         if caractFish[i][6] != "\n":
@@ -126,7 +125,7 @@ for i in range(len(saison)):
     list.insert(END, saison[i])
 
 # on affiche la première question
-label = tk.Label(fenetre, text = "Appuyez sur la touche correspondant a la saison actuel :",bg = 'white', fg = 'black', font = 10)
+label = tk.Label(fenetre, text = "Appuyez sur la touche correspondant a la saison actuel",bg = 'white', fg = 'black', font = 10)
 label.grid(row = 0, column = 0)
 
 # on initialise les variables qui vont servir à enregistrer les choix effectuer par l'utilisateur
